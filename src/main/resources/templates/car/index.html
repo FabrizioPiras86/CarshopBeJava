@@ -42,6 +42,7 @@
           <th>Marca</th>
           <th>Nome</th>
           <th>Targa</th>
+          <th>Noleggio</th>
           <th>Azioni</th>
         </tr>
         </thead>
@@ -51,6 +52,7 @@
           <td th:text="${car.brand}"></td>
           <td th:text="${car.name}"></td>
           <td th:text="${car.plate}"></td>
+          <td th:text="${car.customer != null ? car.customer.fname + ' ' + car.customer.lname : ''}"></td>
           <td>
             <a th:href="@{/car/update/{id}(id=${car.id})}" class="btn btn-warning me-2">Modifica</a>
             <form th:action="@{/car/delete/{id}(id=${car.id})}" method="post" onsubmit="return confirm('Sei sicuro di voler cancellare questa auto?');" style="display:inline;">
